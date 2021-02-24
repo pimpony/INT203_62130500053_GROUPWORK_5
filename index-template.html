@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js </title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body class=" bg-pink-200">
+  <div class="flex justify-center items-center my-28">
+    <div id="app" class=" h-full  w-screen bg-pink-200 flex justify-center items-center ">
+      <div class="h-auto w-2/6 shadow shadow-lg bg-white items-center mx-auto rounded-xl p-5 text-gray-700">
+        <p class=" flex justify-center items-center  font-semibold text-xl "> Cat Gallery | LIKE : <count-photo :count="countPhoto"></count-photo></p>
+
+      
+        <div class="flex items-center justify-end h-10 mt-5 flex relative">
+          <photo-search :selecticon="show.icon" :selectbar="show.searchbar" :inputphoto="input" @toggle="toggle"
+            @input-data="inputdata">
+          </photo-search>
+        </div>
+        <div>
+          <select-photo :status="select_image" :select="searchSelectPhoto" @closephoto="closePhoto">
+          </select-photo> 
+        </div>
+
+        <div>
+          <photo-item :photoitem="searchphotos" @zoomphoto="zoomPhoto" @fav="favorite"></photo-item>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="./main.js"></script>
+  <script src="components/PhotoItem.js"></script>
+  <script src="components/PhotoSearch.js"></script>
+  <script src="components/PhotoView.js"></script>
+
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
+</html>
