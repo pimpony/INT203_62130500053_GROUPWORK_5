@@ -24,25 +24,30 @@
   <div class="flex justify-center items-center my-28">
     <div id="app" class=" h-full  w-screen bg-pink-200 flex justify-center items-center ">
       <div class="h-auto w-2/6 shadow shadow-lg bg-white items-center mx-auto rounded-xl p-5 text-gray-700">
-        <p class=" flex justify-center items-center  font-semibold text-xl "> Cat Gallery | LIKE : <count-photo :count="countPhoto"></count-photo></p>
-
-      
+        <!-- Head -->
+        <p class=" flex justify-center items-center  font-semibold text-xl "> Cat Gallery | LIKE : <count-photo
+            :count="countPhoto"></count-photo>
+        </p>
+        <!-- search -->
         <div class="flex items-center justify-end h-10 mt-5 flex relative">
           <photo-search :selecticon="show.icon" :selectbar="show.searchbar" :inputphoto="input" @toggle="toggle"
             @input-data="inputdata">
           </photo-search>
         </div>
+
+        <!-- Show photo -->
         <div>
           <select-photo :status="select_image" :select="searchSelectPhoto" @closephoto="closePhoto">
-          </select-photo> 
+          </select-photo>
         </div>
 
+        <!-- Main content -->
         <div>
           <photo-item :photoitem="searchphotos" @zoomphoto="zoomPhoto" @fav="favorite"></photo-item>
         </div>
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
 
