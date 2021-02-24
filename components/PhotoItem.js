@@ -1,4 +1,4 @@
-app.component('count-photo', {
+app.component('count-like', {
   props: ['count'],
 
   template:

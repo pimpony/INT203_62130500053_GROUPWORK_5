@@ -14,7 +14,7 @@ app.component('photo-search', {
   template:
     /*html*/`
 
-    <div class="flex items-center justify-end h-10 mt-5 flex relative">
+    <div class="flex items-center justify-end h-10  flex relative">
         <span v-if="selecticon" @click="this.$emit('toggle')" class="material-icons  text-3xl text-pink-400">
           search
         </span>
